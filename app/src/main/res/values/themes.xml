@@ -1,0 +1,103 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BuidlPlayer" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="fontFamily">@font/clash</item>
+    </style>
+
+    <!-- Custom bottom navigation -->
+    <style name="BottomNavigationViewText" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/clash</item>
+    </style>
+
+    <!--  Text bold  -->
+    <style name="TextSizeBold28">
+        <item name="android:textSize">28sp</item>
+        <item name="fontFamily">@font/sora_bold</item>
+        <item name="android:fontFamily">@font/sora_bold</item>
+    </style>
+
+    <style name="TextSizeBold26">
+        <item name="android:textSize">26sp</item>
+        <item name="fontFamily">@font/sora_bold</item>
+        <item name="android:fontFamily">@font/sora_bold</item>
+    </style>
+
+    <style name="TextSizeBold20">
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/sora_bold</item>
+        <item name="android:fontFamily">@font/sora_bold</item>
+    </style>
+
+    <style name="TextSizeBold18">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/sora_bold</item>
+        <item name="android:fontFamily">@font/sora_bold</item>
+    </style>
+
+    <style name="TextSizeBold16">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/sora_bold</item>
+        <item name="android:fontFamily">@font/sora_bold</item>
+    </style>
+    <!--  Text medium  -->
+    <style name="TextSizeMedium32">
+        <item name="android:textSize">32sp</item>
+        <item name="fontFamily">@font/sora_regular</item>
+        <item name="android:fontFamily">@font/sora_regular</item>
+    </style>
+
+    <style name="TextSizeMedium26">
+        <item name="android:textSize">26sp</item>
+        <item name="fontFamily">@font/sora_regular</item>
+        <item name="android:fontFamily">@font/sora_regular</item>
+    </style>
+
+    <style name="TextSizeMedium20">
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/sora_regular</item>
+        <item name="android:fontFamily">@font/sora_regular</item>
+    </style>
+
+    <style name="TextSizeMedium18">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/sora_regular</item>
+        <item name="android:fontFamily">@font/sora_regular</item>
+    </style>
+
+    <style name="TextSizeMedium16">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/sora_regular</item>
+        <item name="android:fontFamily">@font/sora_regular</item>
+    </style>
+
+    <style name="TextSizeMedium14">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/sora_regular</item>
+        <item name="android:fontFamily">@font/sora_regular</item>
+    </style>
+
+    <style name="TextSizeMedium12">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/sora_regular</item>
+        <item name="android:fontFamily">@font/sora_regular</item>
+    </style>
+
+    <style name="TextSizeMedium10">
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/sora_regular</item>
+        <item name="android:fontFamily">@font/sora_regular</item>
+    </style>
+
+    <style name="TextSizeMedium8">
+        <item name="android:textSize">8sp</item>
+        <item name="fontFamily">@font/sora_regular</item>
+        <item name="android:fontFamily">@font/sora_regular</item>
+    </style>
+
+    <style name="Theme.BuidlPlayer" parent="Base.Theme.BuidlPlayer" />
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Arogundade Ibrahim/AndroidStudioProjects/BuidlPlayer/app/src/main/res/drawable/splash.xml" value="0.162" />
+        <entry key="..\:/Users/Arogundade Ibrahim/AndroidStudioProjects/BuidlPlayer/app/src/main/res/layout/activity_main.xml" value="0.27944280287040946" />
+        <entry key="..\:/Users/Arogundade Ibrahim/AndroidStudioProjects/BuidlPlayer/app/src/main/res/layout/course_list.xml" value="0.22659256092347158" />
+        <entry key="..\:/Users/Arogundade Ibrahim/AndroidStudioProjects/BuidlPlayer/app/src/main/res/layout/fragment_connect_wallet.xml" value="0.2830269345874305" />
+        <entry key="..\:/Users/Arogundade Ibrahim/AndroidStudioProjects/BuidlPlayer/app/src/main/res/layout/fragment_player.xml" value="0.2830269345874305" />
+        <entry key="..\:/Users/Arogundade Ibrahim/AndroidStudioProjects/BuidlPlayer/app/src/main/res/layout/fragment_sub_video_list.xml" value="0.22659256092347158" />
+        <entry key="..\:/Users/Arogundade Ibrahim/AndroidStudioProjects/BuidlPlayer/app/src/main/res/layout/fragment_video_list.xml" value="0.223723089911355" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/connectWalletFragment">
+    <fragment
+        android:id="@+id/connectWalletFragment"
+        android:name="ng.farma.buidlplayer.ui.ConnectWalletFragment"
+        android:label="fragment_connect_wallet"
+        tools:layout="@layout/fragment_connect_wallet" >
+        <action
+            android:id="@+id/action_connectWalletFragment_to_videoListFragment"
+            app:destination="@id/videoListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoListFragment"
+        android:name="ng.farma.buidlplayer.ui.VideoListFragment"
+        android:label="fragment_video_list"
+        tools:layout="@layout/fragment_video_list" >
+        <action
+            android:id="@+id/action_videoListFragment_to_subVideoListFragment"
+            app:destination="@id/subVideoListFragment" />
+        <argument
+            android:name="address"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/subVideoListFragment"
+        android:name="ng.farma.buidlplayer.ui.SubVideoListFragment"
+        android:label="fragment_sub_video_list"
+        tools:layout="@layout/fragment_sub_video_list" >
+        <action
+            android:id="@+id/action_subVideoListFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="ng.farma.buidlplayer.ui.PlayerFragment"
+        android:label="fragment_player"
+        tools:layout="@layout/fragment_player" />
+</navigation>

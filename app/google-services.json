@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1070242648819",
+    "project_id": "buidl-a1411",
+    "storage_bucket": "buidl-a1411.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070242648819:android:c7f0a386eb2e6ef5441d86",
+        "android_client_info": {
+          "package_name": "ng.farma.buidlplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070242648819-f4jeu962ja4nrui3q3v15nlff6jugref.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYsf_eZ5a9_vI3qKhtFQ-0NdrsJ6Qqm5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070242648819-f4jeu962ja4nrui3q3v15nlff6jugref.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
