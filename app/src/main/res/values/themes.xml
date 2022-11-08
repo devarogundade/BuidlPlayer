@@ -5,7 +5,8 @@
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:windowBackground">@drawable/splash</item>
-        <item name="fontFamily">@font/clash</item>
+        <item name="android:fontFamily">@font/sora_regular</item>
+        <item name="fontFamily">@font/sora_regular</item>
     </style>
 
     <!-- Custom bottom navigation -->

@@ -1,5 +1,6 @@
 package ng.farma.buidlplayer.ui
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -55,10 +56,10 @@ class SubVideoListFragment : Fragment() {
         if (course == null) return
         binding.toolbar.title = course!!.course.name
         binding.toolbar.setNavigationOnClickListener {
-            findNavController().popBackStack()
             if (previewPlayer.isPlaying) {
                 previewPlayer.stop()
             }
+            findNavController().popBackStack()
         }
 
         viewModel.getSections(course!!.courseId)
@@ -68,7 +69,6 @@ class SubVideoListFragment : Fragment() {
         val mediaItem = MediaItem.fromUri(course!!.course.preview)
         previewPlayer.addMediaItem(mediaItem)
         previewPlayer.prepare()
-        previewPlayer.playWhenReady = true
 
         binding.apply {
             sections.adapter = sectionListAdapter
@@ -89,7 +89,21 @@ class SubVideoListFragment : Fragment() {
                         Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
                         return@observe
                     }
-                    sectionListAdapter.setSections(resource.data)
+                    if (resource.data.size == 0) {
+                        //
+                    } else {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                            binding.courseProgress.setProgress(
+                                (course!!.subscription.viewed.size / resource.data.size) * 100,
+                                true
+                            )
+                        } else {
+                            binding.courseProgress.progress =
+                                (course!!.subscription.viewed.size / resource.data.size) * 100
+                        }
+                        sectionListAdapter.setSections(resource.data)
+                    }
+
 
                     binding.progressBar.visibility = View.GONE
                 }
