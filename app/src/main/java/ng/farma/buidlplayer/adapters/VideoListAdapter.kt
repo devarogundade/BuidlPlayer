@@ -11,7 +11,9 @@ import ng.farma.buidlplayer.R
 import ng.farma.buidlplayer.databinding.CourseListBinding
 import ng.farma.buidlplayer.domain.models.SubscribedCourse
 
-class VideoListAdapter : RecyclerView.Adapter<VideoListAdapter.VideoListViewHolder>() {
+class VideoListAdapter(
+    private val onClick: (SubscribedCourse) -> Unit
+) : RecyclerView.Adapter<VideoListAdapter.VideoListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoListViewHolder {
         return VideoListViewHolder(
@@ -58,7 +60,17 @@ class VideoListAdapter : RecyclerView.Adapter<VideoListAdapter.VideoListViewHold
                 description.text = course.course.description
                 requestManager.load(course.course.photo)
                     .into(photo)
+                creatorName.text = course.user.name
+                requestManager.load(course.user.photo)
+                    .into(creatorPhoto)
+
+                if (course.subscription.active) {
+                    refunded.visibility = View.GONE
+                } else {
+                    refunded.visibility = View.GONE
+                }
             }.root.setOnClickListener {
+                onClick(course)
             }
         }
     }

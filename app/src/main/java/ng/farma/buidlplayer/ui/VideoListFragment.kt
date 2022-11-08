@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import ng.farma.buidlplayer.adapters.VideoListAdapter
@@ -20,7 +21,12 @@ class VideoListFragment : Fragment() {
     private var address: String? = null
 
     private lateinit var binding: FragmentVideoListBinding
-    private val videoListAdapter = VideoListAdapter()
+    private val videoListAdapter = VideoListAdapter { course ->
+        val destination = VideoListFragmentDirections.actionVideoListFragmentToSubVideoListFragment(
+            course
+        )
+        findNavController().navigate(destination)
+    }
     private val viewModel: VideoListViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {

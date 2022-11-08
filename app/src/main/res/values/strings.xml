@@ -49,4 +49,5 @@
     <string name="connect_web3">Log in to your buidl account by connect to your Web3 wallet</string>
     <string name="connect_wallet">Connect Wallet</string>
     <string name="course">Course</string>
+    <string name="refunded">Refunded</string>
 </resources>

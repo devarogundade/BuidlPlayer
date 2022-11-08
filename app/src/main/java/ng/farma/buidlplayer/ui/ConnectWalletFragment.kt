@@ -62,7 +62,7 @@ class ConnectWalletFragment : Fragment() {
 
         override fun onSessionRejected(rejectedSession: Sign.Model.RejectedSession) {
             // Triggered when Dapp receives the session rejection from wallet
-            Toast.makeText(context, "Session Rejected", Toast.LENGTH_SHORT).show()
+            Log.d("TAG", "onSessionRejected: $rejectedSession")
         }
 
         override fun onSessionUpdate(updatedSession: Sign.Model.UpdatedSession) = Unit
@@ -73,7 +73,7 @@ class ConnectWalletFragment : Fragment() {
         override fun onConnectionStateChange(state: Sign.Model.ConnectionState) = Unit
 
         override fun onError(error: Sign.Model.Error) {
-            Toast.makeText(context, "Failed to connect", Toast.LENGTH_SHORT).show()
+            Log.d("TAG", "onError: $error")
         }
     }
 

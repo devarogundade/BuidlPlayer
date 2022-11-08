@@ -7,4 +7,5 @@ object Constants {
     const val COURSES_PATH = "courses"
     const val SECTIONS_PATH = "course-sections"
     const val SUBSCRIPTIONS_PATH = "subscriptions"
+    const val USERS_PATH = "users"
 }

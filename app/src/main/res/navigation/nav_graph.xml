@@ -34,10 +34,21 @@
         <action
             android:id="@+id/action_subVideoListFragment_to_playerFragment"
             app:destination="@id/playerFragment" />
+        <argument
+            android:name="course"
+            app:argType="ng.farma.buidlplayer.domain.models.SubscribedCourse"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/playerFragment"
         android:name="ng.farma.buidlplayer.ui.PlayerFragment"
         android:label="fragment_player"
-        tools:layout="@layout/fragment_player" />
+        tools:layout="@layout/fragment_player" >
+        <argument
+            android:name="section"
+            app:argType="ng.farma.buidlplayer.domain.models.CourseSection"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>

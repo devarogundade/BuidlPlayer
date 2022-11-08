@@ -1,5 +1,7 @@
 package ng.farma.buidlplayer.domain.models
 
+import java.io.Serializable
+
 class CourseSection(
     val id: String = "",
     val courseId: String = "",
@@ -8,4 +10,4 @@ class CourseSection(
     val sectionId: String = "",
     val content: String = "",
     val src: String = ""
-)
+) : Serializable

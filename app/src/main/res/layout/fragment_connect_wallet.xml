@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="@string/connect_your_wallet"
-        android:textColor="@color/black"
+        android:textColor="@color/text_dark"
         app:layout_constraintBottom_toTopOf="@+id/createPortfolio"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -37,7 +37,7 @@
         android:layout_marginBottom="40dp"
         android:paddingVertical="10dp"
         android:text="@string/connect_web3"
-        android:textColor="@color/black"
+        android:textColor="@color/text_dim"
         app:layout_constraintBottom_toTopOf="@+id/connectWallet"
         app:layout_constraintStart_toStartOf="parent" />
 
