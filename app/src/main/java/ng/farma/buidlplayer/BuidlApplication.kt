@@ -8,13 +8,14 @@ import com.walletconnect.android.relay.ConnectionType
 import com.walletconnect.sign.client.Sign
 import com.walletconnect.sign.client.SignClient
 import dagger.hilt.android.HiltAndroidApp
+import ng.farma.buidlplayer.utils.Constants.WC_KEY
 
 @HiltAndroidApp
 class BuidlApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        val projectId = "f6651638454bb9d2b2e0641c03ed6a5c"
+        val projectId = WC_KEY
         val relayUrl = "relay.walletconnect.com"
         val serverUrl = "wss://$relayUrl?projectId=$projectId"
         val connectionType = ConnectionType.AUTOMATIC
