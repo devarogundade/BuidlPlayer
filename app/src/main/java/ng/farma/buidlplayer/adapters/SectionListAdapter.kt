@@ -13,7 +13,7 @@ import ng.farma.buidlplayer.domain.models.CourseSection
 
 class SectionListAdapter(
     private val viewed: List<String>,
-    private val onClick: (CourseSection) -> Unit
+    private val onClick: (CourseSection, Boolean) -> Unit
 ) : RecyclerView.Adapter<SectionListAdapter.SectionListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SectionListViewHolder {
@@ -67,9 +67,7 @@ class SectionListAdapter(
                 }
 
             }.root.setOnClickListener {
-                if (viewed.contains(section.sectionId)) {
-                    onClick(section)
-                }
+                onClick(section, viewed.contains(section.sectionId))
             }
         }
     }

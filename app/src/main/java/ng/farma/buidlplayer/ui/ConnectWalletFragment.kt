@@ -41,7 +41,7 @@ class ConnectWalletFragment : Fragment() {
         }
 
         viewModel.account.observe(viewLifecycleOwner) {
-            login(it)
+            login(it.replace("eip155:1:", ""))
         }
     }
 

@@ -22,6 +22,12 @@ class VideoListFragment : Fragment() {
 
     private lateinit var binding: FragmentVideoListBinding
     private val videoListAdapter = VideoListAdapter { course ->
+        if (!course.subscription.active) {
+            Toast.makeText(context, "This content is not available to you", Toast.LENGTH_SHORT)
+                .show()
+            return@VideoListAdapter
+        }
+
         val destination = VideoListFragmentDirections.actionVideoListFragmentToSubVideoListFragment(
             course
         )
@@ -46,6 +52,9 @@ class VideoListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         if (address == null) return
         viewModel.getCourses(address!!)
+
+        binding.address.text =
+            "${address!!.substring(0..3)}..${address!!.substring(address!!.length - 3..address!!.length)}"
 
         binding.apply {
             videos.adapter = videoListAdapter

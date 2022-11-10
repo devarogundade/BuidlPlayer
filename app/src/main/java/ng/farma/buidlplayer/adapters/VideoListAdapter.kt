@@ -67,7 +67,7 @@ class VideoListAdapter(
                 if (course.subscription.active) {
                     refunded.visibility = View.GONE
                 } else {
-                    refunded.visibility = View.GONE
+                    refunded.visibility = View.VISIBLE
                 }
             }.root.setOnClickListener {
                 onClick(course)

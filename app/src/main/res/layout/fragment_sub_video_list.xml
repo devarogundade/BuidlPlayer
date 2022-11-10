@@ -13,8 +13,9 @@
         android:layout_height="wrap_content"
         android:background="@color/primary"
         app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_main"
         app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
-        app:titleTextAppearance="@style/TextSizeBold18"
+        app:titleTextAppearance="@style/TextSizeMedium18"
         app:titleTextColor="@color/white" />
 
     <androidx.core.widget.NestedScrollView
@@ -41,9 +42,9 @@
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="16dp"
-                android:gravity="center_vertical"
                 app:layout_constraintTop_toBottomOf="@+id/preview">
 
                 <ProgressBar
@@ -53,18 +54,38 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
-                <TextView
+                <androidx.constraintlayout.widget.ConstraintLayout
                     style="@style/TextSizeMedium16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/round_gray"
-                    android:layout_marginStart="16dp"
                     android:padding="16dp"
                     android:text="@string/certificate"
-                    android:textColor="@color/text_dark"
-                    app:drawableEndCompat="@drawable/ic_baseline_verified_24"
-                    app:drawableTint="@color/primary" />
+                    android:textColor="@color/text_dark">
+
+                    <TextView
+                        style="@style/TextSizeMedium16"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/certificate"
+                        android:textColor="@color/text_dark"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/certificate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_close_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/primary" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </LinearLayout>

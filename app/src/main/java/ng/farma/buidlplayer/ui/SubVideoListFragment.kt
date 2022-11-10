@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import dagger.hilt.android.AndroidEntryPoint
+import ng.farma.buidlplayer.R
 import ng.farma.buidlplayer.adapters.SectionListAdapter
 import ng.farma.buidlplayer.databinding.FragmentSubVideoListBinding
 import ng.farma.buidlplayer.domain.models.SubscribedCourse
@@ -34,7 +35,13 @@ class SubVideoListFragment : Fragment() {
         super.onCreate(savedInstanceState)
         course = requireArguments().getSerializable("course") as SubscribedCourse?
         sectionListAdapter =
-            SectionListAdapter(course?.subscription?.viewed ?: emptyList()) { section ->
+            SectionListAdapter(course?.subscription?.viewed ?: emptyList()) { section, isActive ->
+                if (!isActive) {
+                    Toast.makeText(context, "Unlock this content first", Toast.LENGTH_SHORT)
+                        .show()
+                    return@SectionListAdapter
+                }
+
                 val destination =
                     SubVideoListFragmentDirections.actionSubVideoListFragmentToPlayerFragment(
                         section
@@ -60,6 +67,12 @@ class SubVideoListFragment : Fragment() {
                 previewPlayer.stop()
             }
             findNavController().popBackStack()
+        }
+
+        if (course!!.course.certificate) {
+            binding.certificate.setImageResource(R.drawable.ic_baseline_verified_24)
+        } else {
+            binding.certificate.setImageResource(R.drawable.ic_baseline_close_24)
         }
 
         viewModel.getSections(course!!.courseId)
