@@ -54,7 +54,7 @@ class VideoListFragment : Fragment() {
         viewModel.getCourses(address!!)
 
         binding.address.text =
-            "${address!!.substring(0..3)}..${address!!.substring(address!!.length - 3..address!!.length)}"
+            "${address!!.substring(0..3)}..${address!!.substring(address!!.length - 4..address!!.length-1)}"
 
         binding.apply {
             videos.adapter = videoListAdapter
