@@ -66,6 +66,13 @@ class VideoListFragment : Fragment() {
                         Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
                         return@observe
                     }
+
+                    if (resource.data.isEmpty()) {
+                        binding.empty.visibility = View.VISIBLE
+                    } else {
+                        binding.empty.visibility = View.GONE
+                    }
+
                     videoListAdapter.setCourses(resource.data)
 
                     binding.progressBar.visibility = View.GONE

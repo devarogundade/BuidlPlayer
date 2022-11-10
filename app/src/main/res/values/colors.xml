@@ -3,11 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#0177fb</color>
-
+    <color name="background">#001731</color>
     <color name="accent_red_light">#FFF2F0</color>
     <color name="accent_red">#D64B38</color>
-    <color name="text_dark">#505159</color>
-    <color name="text_dim">#8E8E8E</color>
-    <color name="text_light">#C4C4C4</color>
-    <color name="text_light_light">#1A000000</color>
+    <color name="text_dark">#FFFFFFFF</color>
+    <color name="text_dim">#ECECEC</color>
+    <color name="text_light">#B8B8B8</color>
+    <color name="text_light_light">#1AAFAFAF</color>
 </resources>

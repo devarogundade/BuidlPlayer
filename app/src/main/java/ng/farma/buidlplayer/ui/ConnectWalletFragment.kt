@@ -1,20 +1,29 @@
 package ng.farma.buidlplayer.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.walletconnect.android.CoreClient
 import com.walletconnect.sign.client.Sign
 import com.walletconnect.sign.client.SignClient
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import ng.farma.buidlplayer.databinding.FragmentConnectWalletBinding
+import ng.farma.buidlplayer.viewmodels.ConnectWalletViewModel
 
 class ConnectWalletFragment : Fragment() {
 
     private lateinit var binding: FragmentConnectWalletBinding
+    private val viewModel: ConnectWalletViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,15 +35,22 @@ class ConnectWalletFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        binding.connectWallet.setOnClickListener { connectToWallet() }
-        binding.connectWallet.setOnClickListener { login("0XBE25761AE1F024A991ED081532B3C89DF7F28D02") }
+        binding.connectWallet.setOnClickListener {
+            binding.progressBar.visibility = View.VISIBLE
+            connectToWallet()
+        }
+
+        viewModel.account.observe(viewLifecycleOwner) {
+            login(it)
+        }
     }
 
     private fun connectToWallet() {
-        val dappDelegate = object : SignClient.DappDelegate {
+        SignClient.setDappDelegate(object : SignClient.DappDelegate {
             override fun onSessionApproved(approvedSession: Sign.Model.ApprovedSession) {
                 // Triggered when Dapp receives the session approval from wallet
-                Log.d("TAG", "onSessionApproved: $approvedSession")
+                viewModel.logAccount(approvedSession.accounts)
+                Log.d("TAG", "onSessionApproved: ${approvedSession.accounts}")
             }
 
             override fun onSessionRejected(rejectedSession: Sign.Model.RejectedSession) {
@@ -54,9 +70,7 @@ class ConnectWalletFragment : Fragment() {
             override fun onError(error: Sign.Model.Error) {
                 Log.d("TAG", "onError: $error")
             }
-        }
-
-        SignClient.setDappDelegate(dappDelegate)
+        })
 
         val namespace = "eip155"
         val chains = listOf("eip155:1")
@@ -73,7 +87,11 @@ class ConnectWalletFragment : Fragment() {
         val connectParams = Sign.Params.Connect(namespaces, pairing)
 
         SignClient.connect(connectParams, onSuccess = {
-            Log.d("TAG", "connectToWallet: success")
+            Log.d("TAG", "connectToWallet: success $connectParams")
+            val intent: Intent = Uri.parse(connectParams.pairing.uri).let {
+                Intent(Intent.ACTION_VIEW, it)
+            }
+            startActivity(intent)
         }, onError = { error ->
             Log.d("TAG", "connectToWallet: $error")
         })

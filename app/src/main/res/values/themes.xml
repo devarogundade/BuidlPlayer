@@ -28,6 +28,12 @@
         <item name="android:fontFamily">@font/sora_bold</item>
     </style>
 
+    <style name="TextSizeBold24">
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/sora_bold</item>
+        <item name="android:fontFamily">@font/sora_bold</item>
+    </style>
+
     <style name="TextSizeBold20">
         <item name="android:textSize">20sp</item>
         <item name="fontFamily">@font/sora_bold</item>

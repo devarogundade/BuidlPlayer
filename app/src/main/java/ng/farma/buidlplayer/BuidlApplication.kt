@@ -18,11 +18,12 @@ class BuidlApplication : Application() {
         val relayUrl = "relay.walletconnect.com"
         val serverUrl = "wss://$relayUrl?projectId=$projectId"
         val connectionType = ConnectionType.AUTOMATIC
+
         val appMetaData = Core.Model.AppMetaData(
             name = "Buidl Player",
             description = "Watch buidl videos with this app",
-            url = "xxx",
-            icons = listOf("xxx"),
+            url = "https://buidl.netlify.app",
+            icons = listOf("https://buidl.netlify.app/logo.png"),
             redirect = "kotlin-dapp-wc:/request"
         )
 
@@ -36,6 +37,4 @@ class BuidlApplication : Application() {
         val init = Sign.Params.Init(CoreClient)
         SignClient.initialize(init) { error -> Log.d("Application", "onCreate: $error") }
     }
-
-
 }
